@@ -27,12 +27,12 @@
 ### Задание 1
 
 1. Перейдите в каталог [**src**](https://github.com/netology-code/ter-homeworks/tree/main/01/src). Скачайте все необходимые зависимости, использованные в проекте.
-   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_32.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_32.png)
 2. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
-   Согласно файлу .gitignore в файле personal.auto.tfvars допускается хранить секретные данные.
-   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_37.png)
+Согласно файлу .gitignore в файле personal.auto.tfvars допускается хранить секретные данные.
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_37.png)
 4. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
-   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_40.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_40.png)
 6. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_41.png)
@@ -45,8 +45,8 @@
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_43.png)
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_45.png)
 8. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
-   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_46.png)
-   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_47.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_46.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_47.png)
 10. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_48.png)
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_49.png)
