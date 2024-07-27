@@ -84,7 +84,8 @@ ge-family=ubuntu-2204-lts --ssh-key /home/user/.ssh/id_rsa.pub
 docker context create ssh --docker "host=ssh://yc-user@89.169.136.253,key=/home/user/.ssh/id_rsa"
 docker context use ssh
 ```
-7. Используя terraform и  remote docker context, скачайте и запустите на вашей ВМ контейнер ```mysql:8``` на порту ```127.0.0.1:3306```, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(```name  = "example_${random_password.random_string.result}"```  , двойные кавычки и фигурные скобки обязательны!) 
+7. Используя terraform и  remote docker context, скачайте и запустите на вашей ВМ контейнер ```mysql:8``` на порту ```127.0.0.1:3306```, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(```name  = "example_${random_password.random_string.result}"```  , двойные кавычки и фигурные скобки обязательны!)
+
 ```
     environment:
       - "MYSQL_ROOT_PASSWORD=${...}"
@@ -93,8 +94,15 @@ docker context use ssh
       - "MYSQL_PASSWORD=${...}"
       - MYSQL_ROOT_HOST="%"
 ```
+[main.tf для второго задания](https://github.com/stepynin-georgy/ter-hw1/blob/main/2/main.tf)
+
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_60.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_61.png)
+![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_62.png)
 
 6. Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды ```env```. Запишите ваш финальный код в репозиторий.
+    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_64.png)
+    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_65.png)
 
 ### Задание 3*
 1. Установите [opentofu](https://opentofu.org/)(fork terraform с лицензией Mozilla Public License, version 2.0) любой версии
