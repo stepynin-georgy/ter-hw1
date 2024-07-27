@@ -34,31 +34,50 @@
    
 Согласно файлу .gitignore в файле personal.auto.tfvars допускается хранить секретные данные.
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_37.png)
+
 5. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
+   
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_40.png)
-6. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
+
+7. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
+
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_41.png)
+
 Видим две ошибки: Missing name of resource на 24 строке, и Invalide resource name на 29.
 На 24 не хватает второго аргемента, имени. На 29 имя начинается с цифры, исправляем на корректное имя.
+
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_42.png)
+
 Далее появляется еще одна ошибка на 31 строке: Reference to undeclared validate:
+
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_43.png)
+
 Название ресурса в main.tf random_string, а указано random_string_FAKE, еще resulT написан через большие буквы, исправляем.
+
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_43.png)
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_45.png)
-8. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
+
+9. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
+    
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_46.png)
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_47.png)
-10. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
+
+11. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
+    
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_48.png)
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_49.png)
+   
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
+
 --auto-approve автоматичсеки применяет новое описание в манифестах к сущесвующей конфигурации без потверждения. Используется, скорее всего, с CI/CD, ansible, где нет необходимости в интерактивном режиме, чтоб ускорить процесс.
-12. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**.
+13. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**.
+
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_50.png)
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_51.png)
+    
 14. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
+
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_52.png)
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_53.png)
 
