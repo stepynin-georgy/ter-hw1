@@ -27,8 +27,8 @@
 ### Задание 1
 
 1. Перейдите в каталог [**src**](https://github.com/netology-code/ter-homeworks/tree/main/01/src). Скачайте все необходимые зависимости, использованные в проекте.
-![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_32.png)
-2. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
+   ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_32.png)
+3. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
 Согласно файлу .gitignore в файле personal.auto.tfvars допускается хранить секретные данные.
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_37.png)
 4. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
