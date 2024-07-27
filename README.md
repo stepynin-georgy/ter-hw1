@@ -11,8 +11,8 @@
 
 1. Скачайте и установите **Terraform** версии ~>1.8.4 . Приложите скриншот вывода команды ```terraform --version```.
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_35.png)
-3. Скачайте на свой ПК этот git-репозиторий. Исходный код для выполнения задания расположен в директории **01/src**.
-4. Убедитесь, что в вашей ОС установлен docker.
+2. Скачайте на свой ПК этот git-репозиторий. Исходный код для выполнения задания расположен в директории **01/src**.
+3. Убедитесь, что в вашей ОС установлен docker.
 
 ------
 
@@ -30,16 +30,16 @@
    
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_32.png)
    
-3. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
+2. Изучите файл **.gitignore**. В каком terraform-файле, согласно этому .gitignore, допустимо сохранить личную, секретную информацию?(логины,пароли,ключи,токены итд)
    
 Согласно файлу .gitignore в файле personal.auto.tfvars допускается хранить секретные данные.
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_37.png)
 
-5. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
+3. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
    
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_40.png)
 
-7. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
+4. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
 
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_41.png)
@@ -58,12 +58,12 @@
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_43.png)
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_45.png)
 
-9. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
+5. Выполните код. В качестве ответа приложите: исправленный фрагмент кода и вывод команды ```docker ps```.
     
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_46.png)
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_47.png)
 
-11. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
+6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
     
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_48.png)
    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_49.png)
@@ -71,12 +71,12 @@
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
 
 --auto-approve автоматичсеки применяет новое описание в манифестах к сущесвующей конфигурации без потверждения. Используется, скорее всего, с CI/CD, ansible, где нет необходимости в интерактивном режиме, чтоб ускорить процесс.
-13. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**.
+7. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**
 
-    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_50.png)
-    ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_51.png)
+ ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_50.png)
+ ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_51.png)
     
-14. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
+8. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_52.png)
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_53.png)
@@ -93,19 +93,26 @@
 ### Задание 2*
 
 1. Создайте в облаке ВМ. Сделайте это через web-консоль, чтобы не слить по незнанию токен от облака в github(это тема следующей лекции). Если хотите - попробуйте сделать это через terraform, прочитав документацию yandex cloud. Используйте файл ```personal.auto.tfvars``` и гитигнор или иной, безопасный способ передачи токена!
+   
    Создал вм через yc. Создал пару ключей и создал ВМ коммандой:
+   
 ```
 yc compute instance create --name hw2 --zone ru-central1-a --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 --create-boot-disk image-folder-id=standard-images,ima
 ge-family=ubuntu-2204-lts --ssh-key /home/user/.ssh/id_rsa.pub
 ```
+
 3. Подключитесь к ВМ по ssh и установите стек docker.
+   
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_57.png)
+   
 5. Найдите в документации docker provider способ настроить подключение terraform на вашей рабочей станции к remote docker context вашей ВМ через ssh.
    На основной машине настроил docker context:
+   
 ```
 docker context create ssh --docker "host=ssh://yc-user@89.169.136.253,key=/home/user/.ssh/id_rsa"
 docker context use ssh
 ```
+
 7. Используя terraform и  remote docker context, скачайте и запустите на вашей ВМ контейнер ```mysql:8``` на порту ```127.0.0.1:3306```, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(```name  = "example_${random_password.random_string.result}"```  , двойные кавычки и фигурные скобки обязательны!)
 
 ```
@@ -123,6 +130,7 @@ docker context use ssh
 ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_62.png)
 
 6. Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды ```env```. Запишите ваш финальный код в репозиторий.
+   
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_64.png)
     ![изображение](https://github.com/stepynin-georgy/ter-hw1/blob/main/img/Screenshot_65.png)
 
